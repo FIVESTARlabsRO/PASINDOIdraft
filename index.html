@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pas în Doi — Restaurant & Sală de Evenimente Satu Mare</title>
+  <meta name="description" content="Restaurant și sală de evenimente premium în Satu Mare. Gale, evenimente corporate, aniversări și cine memorabile. Rezervări: 0755 501 227." />
+  <meta name="keywords" content="restaurant satu mare, sala evenimente satu mare, organizare evenimente satu mare, pas in doi, gale satu mare" />
+  <meta property="og:title" content="Pas în Doi — Restaurant & Sală de Evenimente Satu Mare" />
+  <meta property="og:description" content="Un spațiu rafinat pentru momente speciale în inima Satu Mare." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0A0A0A;
+      --dark: #111111;
+      --card-dark: #1A1A1A;
+      --card-dark2: #1F1F1F;
+      --warm-white: #F7F3EE;
+      --white: #FFFFFF;
+      --gold: #C9A84C;
+      --gold-dark: #A8862E;
+      --gold-light: #E2C46E;
+      --gold-muted: rgba(201,168,76,0.15);
+      --gray: #888888;
+      --gray-light: #BBBBBB;
+      --border-light: #E8E2D9;
+      --border-dark: rgba(201,168,76,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--warm-white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 22px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      transition: background 0.5s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(10,10,10,0.97);
+      padding: 14px 60px;
+      box-shadow: 0 2px 40px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 42px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-phone {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+    .nav-phone:hover { color: var(--gold-light); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--gold);
+      transition: 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-style: italic;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+    .mobile-menu .mobile-phone {
+      font-family: 'Jost', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-top: 20px;
+    }
+    .mobile-close {
+      position: absolute;
+      top: 24px; right: 30px;
+      font-size: 32px;
+      color: var(--gray);
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      /* TO CHANGE HERO IMAGE: replace images/hero.jpg with your photo */
+      background-image: url('images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+      background-color: #1a1510;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.55) 50%,
+        rgba(0,0,0,0.75) 100%
+      );
+    }
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 30px;
+    }
+    .hero-overline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.3s forwards;
+    }
+    .hero-overline-line {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-overline span {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: clamp(72px, 12vw, 120px);
+      color: var(--white);
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+    .hero-divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 0 auto 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.7s forwards;
+    }
+    .hero-sub {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      color: rgba(255,255,255,0.78);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.85s forwards;
+    }
+    .hero-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px;
+      padding: 10px 20px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1s forwards;
+      backdrop-filter: blur(8px);
+    }
+    .stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; }
+    .rating-text {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.06em;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.15s forwards;
+    }
+    .btn-outline {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 15px 36px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      border-radius: 1px;
+    }
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+    .btn-solid {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 15px 36px;
+      background: var(--gold);
+      color: var(--black);
+      border: 1px solid var(--gold);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      border-radius: 1px;
+    }
+    .btn-solid:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.5s forwards;
+    }
+    .scroll-indicator span {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(201,168,76,0.6), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 110px 60px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .section-label-line {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .section-label span {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .section-title-light {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .section-title-dark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .section-sub-light {
+      font-family: 'Jost', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.85;
+      max-width: 560px;
+    }
+    .section-sub-dark {
+      font-family: 'Jost', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.85;
+      max-width: 560px;
+    }
+
+    /* ── ABOUT ── */
+    #despre { background: var(--warm-white); }
+    .despre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .despre-text p {
+      font-family: 'Jost', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+    .despre-gold-line {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin-top: 32px;
+    }
+    .stats-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--white);
+      border-left: 3px solid var(--gold);
+      padding: 22px 28px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateX(6px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #888;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* ── RESTAURANT ── */
+    #restaurant {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #restaurant::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 50%, rgba(201,168,76,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 50%, rgba(201,168,76,0.03) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .restaurant-header { text-align: center; margin-bottom: 64px; }
+    .restaurant-header .section-label { justify-content: center; }
+    .restaurant-header .section-sub-dark { margin: 0 auto; text-align: center; }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .dark-card {
+      background: var(--card-dark);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-top: 2px solid var(--gold);
+      padding: 40px 32px;
+      transition: all 0.4s ease;
+    }
+    .dark-card:hover {
+      border-color: rgba(201,168,76,0.4);
+      border-top-color: var(--gold-light);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+    .card-icon {
+      margin-bottom: 24px;
+      color: var(--gold);
+    }
+    .card-icon svg { width: 36px; height: 36px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .card-text {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+    }
+    .schedule-rows { margin-top: 12px; }
+    .schedule-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .schedule-row:last-child { border-bottom: none; }
+    .schedule-day {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.06em;
+    }
+    .schedule-time {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+    }
+    .card-phone {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+      display: block;
+      margin-top: 12px;
+      transition: color 0.3s;
+    }
+    .card-phone:hover { color: var(--gold-light); }
+
+    /* ── EVENTS ── */
+    #evenimente { background: var(--warm-white); }
+    .eventi-header { margin-bottom: 48px; }
+    .eventi-image-strip {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 56px;
+      border-radius: 2px;
+      /* TO CHANGE EVENTS IMAGE: replace images/events.jpg */
+      background-image: url('images/events.jpg');
+      background-size: cover;
+      background-position: center;
+      background-color: #2a2010;
+    }
+    .eventi-image-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    .eventi-image-quote {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .eventi-image-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 24px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+      max-width: 600px;
+      padding: 0 30px;
+    }
+    .eventi-image-quote p::before { content: '\201C'; color: var(--gold); font-size: 40px; vertical-align: -8px; margin-right: 4px; }
+    .eventi-image-quote p::after { content: '\201D'; color: var(--gold); font-size: 40px; vertical-align: -8px; margin-left: 4px; }
+    .light-card {
+      background: var(--white);
+      border-top: 2px solid var(--gold);
+      padding: 40px 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .light-card::before {
+      content: attr(data-num);
+      position: absolute;
+      top: -10px; right: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 90px;
+      font-weight: 700;
+      color: rgba(201,168,76,0.08);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .light-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+    .light-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 14px;
+    }
+    .light-card-text {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--dark); position: relative; overflow: hidden; }
+    #contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .contact-header { text-align: center; margin-bottom: 64px; }
+    .contact-header .section-label { justify-content: center; }
+    .contact-header .section-sub-dark { margin: 0 auto; text-align: center; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .contact-card {
+      background: var(--card-dark);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-top: 2px solid var(--gold);
+      padding: 44px;
+    }
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-row-icon {
+      color: var(--gold);
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .contact-row-content {}
+    .contact-row-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .contact-row-value {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.6;
+    }
+    .contact-phone-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+      display: block;
+      transition: color 0.3s;
+    }
+    .contact-phone-big:hover { color: var(--gold-light); }
+    .map-wrapper {
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.15);
+      height: 100%;
+      min-height: 400px;
+    }
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      border: 0;
+      display: block;
+      filter: grayscale(30%) contrast(1.05);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 56px 60px 32px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .footer-divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 0 auto 18px;
+    }
+    .footer-info {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .footer-copy {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.6; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      nav.scrolled { padding: 12px 24px; }
+      .nav-links, .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 80px 24px; }
+      .despre-grid { grid-template-columns: 1fr; gap: 48px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: clamp(56px, 14vw, 80px); }
+      footer { padding: 48px 24px 28px; }
+    }
+    @media (max-width: 600px) {
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .btn-outline, .btn-solid { width: 100%; max-width: 260px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Pas în Doi</a>
+  <ul class="nav-links">
+    <li><a href="#despre">Despre</a></li>
+    <li><a href="#restaurant">Restaurant</a></li>
+    <li><a href="#evenimente">Evenimente</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:0755501227" class="nav-phone">☎ 0755 501 227</a>
+  <button class="hamburger" id="hamburger" aria-label="Meniu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&times;</button>
+  <a href="#despre" onclick="closeMobile()">Despre</a>
+  <a href="#restaurant" onclick="closeMobile()">Restaurant</a>
+  <a href="#evenimente" onclick="closeMobile()">Evenimente</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="tel:0755501227" class="mobile-phone">0755 501 227</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-overline">
+      <span class="hero-overline-line"></span>
+      <span>Est. Satu Mare &nbsp;·&nbsp; Restaurant & Evenimente</span>
+      <span class="hero-overline-line"></span>
+    </div>
+    <h1 class="hero-title">Pas în Doi</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Restaurant &amp; Sală de Evenimente</p>
+    <div class="hero-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-text">4.3 / 5 &nbsp;·&nbsp; 232 recenzii Google</span>
+    </div>
+    <div class="hero-buttons">
+      <a href="#despre" class="btn-outline">Descoperă</a>
+      <a href="tel:0755501227" class="btn-solid">Rezervări</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- DESPRE -->
+<section id="despre">
+  <div class="container">
+    <div class="despre-grid">
+      <div class="despre-text">
+        <div class="section-label reveal">
+          <span class="section-label-line"></span>
+          <span>Despre Noi</span>
+        </div>
+        <h2 class="section-title-light reveal reveal-delay-1">
+          Un loc unde fiecare<br/>moment contează.
+        </h2>
+        <p class="reveal reveal-delay-2">
+          Pas în Doi este mai mult decât un restaurant. Este un spațiu creat pentru momente speciale — fie că vorbim despre o cină în doi, o celebrare în familie sau un eveniment de business de anvergură.
+        </p>
+        <p class="reveal reveal-delay-3">
+          Situat pe Bulevardul Lucian Blaga din Satu Mare, locația noastră combină eleganța unui cadru rafinat cu căldura ospitalității românești autentice.
+        </p>
+        <div class="despre-gold-line reveal reveal-delay-4"></div>
+      </div>
+      <div class="stats-stack">
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-number">4.3 ★</div>
+          <div class="stat-label">Rating Google</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-number">232</div>
+          <div class="stat-label">Recenzii Verificate</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-number">$$</div>
+          <div class="stat-label">Raport Calitate–Preț</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTAURANT -->
+<section id="restaurant">
+  <div class="container">
+    <div class="restaurant-header">
+      <div class="section-label reveal">
+        <span class="section-label-line"></span>
+        <span>Restaurant</span>
+      </div>
+      <h2 class="section-title-dark reveal reveal-delay-1">
+        O experiență culinară<br/><em>pentru toate simțurile</em>
+      </h2>
+      <p class="section-sub-dark reveal reveal-delay-2">
+        Vă așteptăm zilnic cu preparate alese, vinuri selecționate și o atmosferă care transformă orice masă într-o amintire.
+      </p>
+    </div>
+    <div class="cards-grid">
+      <div class="dark-card reveal reveal-delay-1">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4v11h2V2H3zm6 7H5V2h2v3h1V2h2v7zm4-7v18h2V13h3c1.1 0 2-.9 2-2V2h-7z"/></svg>
+        </div>
+        <div class="card-title">Bucătărie Rafinată</div>
+        <p class="card-text">Preparate atent selecționate, ingrediente proaspete și rețete care respectă tradiția și îmbrățișează modernul. O experiență gastronomică completă.</p>
+      </div>
+      <div class="dark-card reveal reveal-delay-2">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="card-title">Program</div>
+        <div class="schedule-rows">
+          <div class="schedule-row">
+            <span class="schedule-day">Luni – Vineri</span>
+            <span class="schedule-time">09:00 – 22:00</span>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-day">Sâmbătă</span>
+            <span class="schedule-time">11:00 – 22:30</span>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-day">Duminică</span>
+            <span class="schedule-time">11:00 – 22:30</span>
+          </div>
+        </div>
+      </div>
+      <div class="dark-card reveal reveal-delay-3">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.46 2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.08 6.08l1.88-1.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="card-title">Rezervări</div>
+        <p class="card-text">Sunați-ne pentru a rezerva o masă sau sala de evenimente. Suntem disponibili în program.</p>
+        <a href="tel:0755501227" class="card-phone">0755 501 227</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENIMENTE -->
+<section id="evenimente">
+  <div class="container">
+    <div class="eventi-header">
+      <div class="section-label reveal">
+        <span class="section-label-line"></span>
+        <span>Evenimente</span>
+      </div>
+      <h2 class="section-title-light reveal reveal-delay-1">
+        Spațiul Perfect Pentru<br/>Evenimentul Tău
+      </h2>
+      <p class="section-sub-light reveal reveal-delay-2">
+        De la gale și evenimente corporate la aniversări și petreceri private — creăm cadrul perfect pentru fiecare ocazie specială.
+      </p>
+    </div>
+    <div class="eventi-image-strip reveal">
+      <div class="eventi-image-quote">
+        <p>Fiecare eveniment merită să fie de neuitat.</p>
+      </div>
+    </div>
+    <div class="cards-grid">
+      <div class="light-card reveal reveal-delay-1" data-num="01">
+        <div class="light-card-title">Gale &amp; Evenimente Corporate</div>
+        <p class="light-card-text">Spațiu elegant și servicii impecabile pentru evenimentele tale de business. Capacitate, flexibilitate și profesionalism la cel mai înalt nivel.</p>
+      </div>
+      <div class="light-card reveal reveal-delay-2" data-num="02">
+        <div class="light-card-title">Aniversări &amp; Celebrări</div>
+        <p class="light-card-text">Zilele de naștere, aniversările și momentele speciale capătă o altă dimensiune într-un cadru creat special pentru bucuria ta.</p>
+      </div>
+      <div class="light-card reveal reveal-delay-3" data-num="03">
+        <div class="light-card-title">Evenimente Speciale</div>
+        <p class="light-card-text">Indiferent de tipul sau dimensiunea evenimentului, echipa noastră se asigură că fiecare detaliu este perfect realizat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-header">
+      <div class="section-label reveal">
+        <span class="section-label-line"></span>
+        <span>Contact &amp; Locație</span>
+      </div>
+      <h2 class="section-title-dark reveal reveal-delay-1">
+        Ne Găsești Aici
+      </h2>
+      <p class="section-sub-dark reveal reveal-delay-2">
+        Vino să ne cunoști sau sună-ne pentru o rezervare.
+      </p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-row">
+          <div class="contact-row-icon">📍</div>
+          <div class="contact-row-content">
+            <div class="contact-row-label">Adresă</div>
+            <div class="contact-row-value">Bulevardul Lucian Blaga 248/C<br/>447231 Satu Mare, România</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">📞</div>
+          <div class="contact-row-content">
+            <div class="contact-row-label">Telefon</div>
+            <a href="tel:0755501227" class="contact-phone-big">0755 501 227</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">🕐</div>
+          <div class="contact-row-content">
+            <div class="contact-row-label">Program</div>
+            <div class="contact-row-value">
+              Luni – Vineri: 09:00 – 22:00<br/>
+              Sâmbătă – Duminică: 11:00 – 22:30
+            </div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">⭐</div>
+          <div class="contact-row-content">
+            <div class="contact-row-label">Rating</div>
+            <div class="contact-row-value" style="color: var(--gold);">4.3 / 5 pe Google &nbsp;·&nbsp; 232 recenzii</div>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrapper reveal reveal-delay-1">
+        <iframe
+          src="https://maps.google.com/maps?q=Bulevardul+Lucian+Blaga+248,+Satu+Mare,+Romania&output=embed"
+          allowfullscreen
+          loading="lazy"
+          title="Locație Pas în Doi">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Pas în Doi</div>
+  <div class="footer-divider"></div>
+  <div class="footer-info">
+    Bulevardul Lucian Blaga 248/C &nbsp;·&nbsp; Satu Mare &nbsp;·&nbsp;
+    <a href="tel:0755501227" style="color: var(--gold); text-decoration: none;">0755 501 227</a>
+  </div>
+  <div class="footer-copy">© 2025 Pas în Doi. Toate drepturile rezervate.</div>
+</footer>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 80);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+  hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+
+  // Intersection Observer
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
